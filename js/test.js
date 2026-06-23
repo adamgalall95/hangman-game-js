@@ -1,2 +1,4 @@
-// to be removed
-console.log('Hello world');
+"use strict";
+
+const cotainer = document.getElementById("main-container");
+console.log(cotainer);

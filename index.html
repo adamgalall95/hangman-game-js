@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>Hangman</title>
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <div class="sub-container">
+        <div class="hangman">
+          <img src="./assets/img/h-8.jpg" />
+        </div>
+        <div class="game-stats">
+          <div class="scores">
+            <span>Scores</span>
+            <span>Scores</span>
+          </div>
+          <div class="play-again">
+            <button class="play-again__btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+      <div class="underscores">
+        <span>_</span>
+        <span>_</span>
+        <span>_</span>
+        <span>_</span>
+        <span>_</span>
+      </div>
+      <div class="keyboard">
+        <div class="row">
+          <button class="keyboard__btn">q</button>
+          <button class="keyboard__btn">w</button>
+          <button class="keyboard__btn">e</button>
+          <button class="keyboard__btn">r</button>
+          <button class="keyboard__btn">t</button>
+          <button class="keyboard__btn">y</button>
+          <button class="keyboard__btn">u</button>
+          <button class="keyboard__btn">i</button>
+          <button class="keyboard__btn">o</button>
+          <button class="keyboard__btn">p</button>
+        </div>
+        <div class="row">
+          <button class="keyboard__btn">a</button>
+          <button class="keyboard__btn">s</button>
+          <button class="keyboard__btn">d</button>
+          <button class="keyboard__btn">f</button>
+          <button class="keyboard__btn">g</button>
+          <button class="keyboard__btn">h</button>
+          <button class="keyboard__btn">j</button>
+          <button class="keyboard__btn">k</button>
+          <button class="keyboard__btn">l</button>
+        </div>
+        <div class="row">
+          <button class="keyboard__btn">z</button>
+          <button class="keyboard__btn">x</button>
+          <button class="keyboard__btn">c</button>
+          <button class="keyboard__btn">v</button>
+          <button class="keyboard__btn">b</button>
+          <button class="keyboard__btn">n</button>
+          <button class="keyboard__btn">m</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
