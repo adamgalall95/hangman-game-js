@@ -1,77 +1,91 @@
-.main-container {
+body {
+  background-color: #5e63ba;
   height: 100vh;
   width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.main-container .message {
+body .main-container {
+  background-color: white;
+  border-radius: 5px;
+  height: 85%;
+  width: 80%;
+  padding: 1em;
+}
+body .main-container .message {
   height: 10%;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.main-container .message__span {
-  font-size: 3em;
+body .main-container .message span {
+  font-size: 2em;
 }
-.main-container .sub-container {
-  height: 40%;
-  width: 100%;
+body .main-container .sub-container {
+  height: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
-.main-container .sub-container .hangman {
+body .main-container .sub-container .hangman {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.main-container .sub-container .hangman img {
+body .main-container .sub-container .hangman img {
   width: 100%;
 }
-.main-container .sub-container .game-stats {
+body .main-container .sub-container .game-stats {
   height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
-}
-.main-container .sub-container .game-stats .scores {
-  height: 80%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2em;
+  gap: 2.5em;
+  font-size: 1.25em;
 }
-.main-container .sub-container .game-stats .play-again {
-  height: 20%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body .main-container .sub-container .game-stats .play-again__btn {
+  font-size: 1em;
+  background-color: transparent;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: #5e63ba;
+  color: azure;
 }
-.main-container .underscores {
+body .main-container .underscores {
   height: 10%;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2em;
   gap: 0.25em;
 }
-.main-container .keyboard {
-  height: 40%;
-  width: 100%;
-}
-.main-container .keyboard .row {
+body .main-container .keyboard {
+  height: 20%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 5px;
 }
-.main-container .keyboard .row .btn {
+body .main-container .keyboard .keyboard__btn {
   width: 2.5em;
-  height: 3em;
+  height: 2.5em;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: #5e63ba;
+  color: azure;
 }
 
 /*# sourceMappingURL=style.css.map */
