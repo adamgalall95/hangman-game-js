@@ -1,5 +1,47 @@
 "use strict";
 
+class Stats {
+  static wins = 0;
+  static losses = 0;
+  static wordsPlayed = [];
+
+  constructor(playerName) {
+    this.playerName = playerName;
+  }
+
+  static recordWin(word) {
+    this.wins++;
+    this.wordsPlayed.push(word);
+    this.save();
+  }
+
+  static recordLoss(word) {
+    this.losses++;
+    this.wordsPlayed.push(word);
+    this.save();
+  }
+
+  static save() {
+    localStorage.setItem(
+      "playerStats",
+      JSON.stringify({
+        wins: this.wins,
+        losses: this.losses,
+        wordsPlayed: this.wordsPlayed,
+      }),
+    );
+  }
+
+  static load() {
+    const data = JSON.parse(localStorage.getItem("playerStats"));
+
+    if (!data) return;
+    this.wins = data.wins;
+    this.losses = data.losses;
+    this.wordsPlayed = data.wordsPlayed;
+  }
+}
+
 const getRandomWord = (arr) => {
   const randomIndex = Math.floor(Math.random() * arr.length);
   const randomItem = arr[randomIndex];
@@ -61,18 +103,20 @@ const lossesClass = document.querySelector(".scores__losses");
 let guessedList = [];
 
 let hangmanIterator = 0;
-let wins = 0;
-let losses = 0;
 
 let gameOver = false;
 
 const main = async () => {
+  Stats.load();
+  showMessage(winsClass, `Wins : ${Stats.wins}`);
+  showMessage(lossesClass, `Losses : ${Stats.losses}`);
+
   const jsonWords = await fetch("./assets/example-words.json");
   const arrayWords = await jsonWords.json();
   const randomWord = getRandomWord(arrayWords);
 
   renderletters(randomWord, guessedList, underScor);
-  showMessage(msgClass, "Lets Play!");
+  showMessage(msgClass, "Hangman Game!");
 
   for (const btn of buttons) {
     // keyboard button
@@ -91,10 +135,10 @@ const main = async () => {
           hangmanImage(hmClass, hangmanIterator);
         }
 
-        if (hangmanIterator > 10) {
+        if (hangmanIterator >= 10) {
           gameOver = true;
-          losses++;
-          showMessage(lossesClass, `Losses : ${losses}`);
+          Stats.recordLoss(randomWord.join(""));
+          showMessage(lossesClass, `Losses : ${Stats.losses}`);
           showMessage(msgClass, "You lost!");
           return;
         }
@@ -104,8 +148,8 @@ const main = async () => {
 
       if (hasWon(randomWord, guessedList)) {
         gameOver = true;
-        wins++;
-        showMessage(winsClass, `Wins : ${wins}`);
+        Stats.recordWin(randomWord.join(""));
+        showMessage(winsClass, `Wins : ${Stats.wins}`);
         showMessage(msgClass, "You Won!");
       }
     });
