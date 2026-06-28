@@ -1,3 +1,5 @@
+@use "./globals/_game";
+
 body {
   background-color: #5e63ba;
   height: 100vh;
@@ -8,98 +10,4 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  .main-container {
-    background-color: white;
-    border-radius: 5px;
-    height: 85%;
-    width: 80%;
-    padding: 1em;
-
-    .message {
-      height: 10%;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      span {
-        font-size: 2em;
-      }
-    }
-
-    .sub-container {
-      height: 60%;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-
-      .hangman {
-        height: 100%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        img {
-          width: 100%;
-        }
-      }
-      .game-stats {
-        height: 100%;
-        width: 50%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5em;
-        font-size: 1.25em;
-
-        .play-again__btn {
-          font-size: 1em;
-          background-color: transparent;
-          background-color: transparent;
-          font-weight: 600;
-          cursor: pointer;
-          border-radius: 5px;
-          text-transform: uppercase;
-          background-color: #5e63ba;
-          color: azure;
-        }
-      }
-    }
-    .underscores {
-      height: 10%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2em;
-      gap: 0.25em;
-    }
-
-    .keyboard {
-      height: 20%;
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
-
-      .keyboard__btn {
-        width: 2.5em;
-        height: 2.5em;
-        background-color: transparent;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 5px;
-        text-transform: uppercase;
-        background-color: #5e63ba;
-        color: azure;
-      }
-    }
-  }
 }
