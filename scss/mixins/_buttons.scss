@@ -12,4 +12,8 @@
 
   background-color: colors.$accent;
   color: colors.$surface;
+
+  &:hover {
+    background-color: #c9c9c9;
+  }
 }

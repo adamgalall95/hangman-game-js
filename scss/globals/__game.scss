@@ -85,6 +85,13 @@
       font-family: fonts.$body;
       width: 2.5em;
       height: 2.5em;
+
+      &:disabled {
+        background-color: #b8b8b8; // Darker or lighter shade
+        color: #777;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
     }
   }
 }
