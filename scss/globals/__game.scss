@@ -1,7 +1,11 @@
 @use "../mixins/buttons";
+@use "../mixins/layout";
+@use "../mixins/colors";
+@use "../mixins/fonts";
+@use "../mixins/media";
 
 .game {
-  background-color: white;
+  background-color: colors.$surface;
   border-radius: 5px;
   height: 85%;
   width: 80%;
@@ -10,43 +14,46 @@
   .message {
     height: 10%;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include layout.flex-center;
+
+    font-family: fonts.$heading;
     font-size: 2em;
-    color: #5e63ba;
+    color: colors.$text;
     font-weight: 600;
   }
 
   &__content {
     height: 60%;
-    display: flex;
-    flex-direction: row;
+
+    @include layout.flex;
+
     justify-content: flex-end;
 
     .hangman {
       height: 100%;
+      overflow: hidden;
 
-      display: flex;
-      flex-direction: column;
+      @include layout.flex(column);
+
       justify-content: flex-end;
 
       &__image {
         width: 100%;
       }
     }
+
     .game-stats {
       height: 100%;
       width: 50%;
 
-      display: flex;
-      flex-direction: column;
+      @include layout.flex(column, 2.5em);
+
       align-items: center;
       justify-content: center;
-      gap: 2.5em;
+
+      font-family: fonts.$body;
       font-size: 1.25em;
-      color: #5e63ba;
+      color: colors.$text;
       font-weight: 600;
 
       &__play-btn {
@@ -54,27 +61,92 @@
       }
     }
   }
+
   .underscores {
     height: 10%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include layout.flex-center;
+
+    font-family: fonts.$heading;
     font-size: 2em;
+    color: colors.$text;
     gap: 0.25em;
   }
 
   .keyboard {
     height: 20%;
 
-    display: flex;
+    @include layout.flex(row, 5px);
+
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
 
     &__btn {
+      font-family: fonts.$body;
       width: 2.5em;
       height: 2.5em;
     }
+  }
+}
+
+@include media.md {
+  .game {
+    padding: 1.5em;
+
+    .message {
+      font-size: 2.5em;
+    }
+
+    .game-stats {
+      font-size: 1.5em;
+    }
+
+    .underscores {
+      font-size: 2.5em;
+    }
+
+    .keyboard {
+      gap: 8px;
+
+      &__btn {
+        width: 3em;
+        height: 3em;
+      }
+    }
+  }
+}
+
+@include media.lg {
+  .game {
+    width: 70%;
+    max-width: 900px;
+    padding: 2em;
+
+    .message {
+      font-size: 3em;
+    }
+
+    .game-stats {
+      font-size: 1.75em;
+    }
+
+    .underscores {
+      font-size: 3em;
+    }
+
+    .keyboard {
+      gap: 10px;
+
+      &__btn {
+        width: 3.25em;
+        height: 3.25em;
+      }
+    }
+  }
+}
+
+@include media.xl {
+  .game {
+    max-width: 1000px;
   }
 }
