@@ -1,13 +1,17 @@
 @use "./globals/_game";
+@use "./mixins/layout";
+@use "./mixins/colors";
+@use "./mixins/fonts";
 
 body {
-  background-color: #5e63ba;
+  background-color: colors.$background;
   height: 100vh;
   width: 100%;
   margin: 0;
 
-  display: flex;
-  flex-direction: column;
+  font-family: fonts.$body;
+
+  @include layout.flex(column);
   justify-content: center;
   align-items: center;
 }

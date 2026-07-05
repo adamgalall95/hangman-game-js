@@ -1,10 +1,15 @@
+@use "../mixins/colors";
+@use "../mixins/fonts";
+
 .btn {
   cursor: pointer;
   border-radius: 5px;
+  border: none;
+
+  font-family: fonts.$body;
   font-weight: 600;
   text-transform: uppercase;
-  border: none;
-  background-color: transparent;
-  background-color: #5e63ba;
-  color: azure;
+
+  background-color: colors.$accent;
+  color: colors.$surface;
 }

@@ -2,13 +2,13 @@
 
 ## Overview
 
-A browser-based implementation of the classic Hangman game built with **HTML**, **SCSS**, and **JavaScript**.
+Hangman is a browser-based implementation of the classic word guessing game built with **HTML**, **SCSS**, and **JavaScript**.
 
-The main objective of this project was to strengthen my JavaScript skills by building an interactive web application from scratch and applying modern frontend development concepts.
+This project was created to strengthen my JavaScript skills by building an interactive application using modern frontend development practices.
 
 ## Screenshot
 
-![Hangman Game](./assets/img/gameScreenshot.png)
+![Hangman Game](./assets/img/game-screen-shot.png)
 
 ## Features
 
@@ -16,27 +16,23 @@ The main objective of this project was to strengthen my JavaScript skills by bui
 - Interactive on-screen keyboard
 - Dynamic word rendering
 - Hangman image progression
-- Win and loss detection
+- Win/loss detection
 - Play Again functionality
-- Persistent game statistics using Local Storage
+- Game statistics saved with Local Storage
 
-## JavaScript Focus
-
-This project was built to practice:
+## JavaScript Concepts
 
 - DOM manipulation
 - Event listeners
-- Functions and modular code organization
 - ES6 modules (`import` / `export`)
-- Classes and object-oriented programming
-- Arrays and string manipulation
-- Asynchronous JavaScript (`async` / `await`)
-- Fetch API
+- Classes (OOP)
+- Async/Await & Fetch API
 - Local Storage
-- Application state management
+- State management
 
 ## Technologies
 
 - HTML5
 - SCSS
 - JavaScript (ES6)
+- Git & GitHub
